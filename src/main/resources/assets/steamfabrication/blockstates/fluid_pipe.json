@@ -1,0 +1,42 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "all": "steamfabrication:blocks/fluid_pipe",
+      "particle": "steamfabrication:blocks/fluid_pipe"
+    },
+    "model": "steamfabrication:fluid_pipe"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{
+      "submodel": {
+        "submodel1": {"model": "steamfabrication:fluid_pipeext", "x": 90, "y": -90},
+        "submodel2": {"model": "steamfabrication:fluid_pipeext", "x": 90, "y": 90}
+      }}],
+    "down": {
+      "true": {"submodel": "steamfabrication:fluid_pipeext"},
+      "false":{}
+    },
+    "east": {
+      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": 90, "y": -90},
+      "false":{}
+    },
+    "north": {
+      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": -90},
+      "false":{}
+    },
+    "south": {
+      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": 90},
+      "false":{}
+    },
+    "up": {
+      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": 180},
+      "false":{}
+    },
+    "west": {
+      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": 90, "y": 90},
+      "false":{}
+    }
+  }
+}

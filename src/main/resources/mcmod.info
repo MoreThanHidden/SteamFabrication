@@ -1,0 +1,16 @@
+[
+{
+  "modid": "steamfabrication",
+  "name": "Steam Fabrication",
+  "description": "A slightly more realistic steam generation, with energy production.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/MoreThanHidden/SteamFabrication",
+  "updateUrl": "",
+  "authorList": ["MoreThanHidden"],
+  "credits": "",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
