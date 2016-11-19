@@ -1,6 +1,6 @@
 {
     "textures": {
-        "all": "powerofmagic:blocks/blockCable"
+        "all": "steamfabrication:blocks/fluid_pipe"
     },
     "elements": [
         {

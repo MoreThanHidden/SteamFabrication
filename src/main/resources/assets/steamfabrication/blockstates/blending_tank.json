@@ -17,7 +17,7 @@
     "active": {
       "true": {
 		"submodel": {
-			submodel1": {"model": "steamfabrication:liquid_model", "x": 90, "y": -90},
+			"submodel1": {"model": "steamfabrication:liquid_model", "x": 90, "y": -90},
 			"submodel2": {"model": "steamfabrication:liquid_model", "x": 90, "y": 90}
 		}
 	  },
