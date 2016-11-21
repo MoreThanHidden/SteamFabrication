@@ -12,10 +12,12 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 
 public class BlockPipe extends BlockContainer {
 
@@ -27,9 +29,10 @@ public class BlockPipe extends BlockContainer {
     public static final PropertyBool WEST = PropertyBool.create("west");
 
     public BlockPipe() {
-        super(Material.WEB);
+        super(Material.CIRCUITS);
         setCreativeTab(SteamFabrication.tabsteamfabrication);
         setUnlocalizedName("fluid_pipe");
+        setRegistryName(new ResourceLocation(SteamFabrication.MODID, getUnlocalizedName()));
         this.setDefaultState(this.blockState.getBaseState().withProperty(UP, false).withProperty(DOWN, false).withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false));
     }
 
@@ -75,21 +78,62 @@ public class BlockPipe extends BlockContainer {
                 .withProperty(WEST, canConnect(worldIn, pos, EnumFacing.WEST));
     }
 
-    public final boolean canConnect(IBlockAccess world, BlockPos pos, EnumFacing dir)
-    {
-        TileEntity tile = world.getTileEntity(pos.offset(dir));
-        if (tile != null){
-            if (IFluidHandler.class.isAssignableFrom(tile.getClass())){
-                return true;
-            }
+    public final boolean canConnect(IBlockAccess world, BlockPos pos, EnumFacing dir) {
+        //Connect to other pipes
+        if(world.getBlockState(pos.offset(dir)).getBlock() == this){
+            return true;
         }
-        return false;
+
+        //Connect to Fluid Capabilitys
+        TileEntity tile = world.getTileEntity(pos.offset(dir));
+        return tile != null && tile.hasCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, dir.getOpposite());
     }
 
     @Override
     public Block setCreativeTab(CreativeTabs tab) {
         super.setCreativeTab(tab);
         return this;
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+        final boolean North = this.canConnect(worldIn, pos, EnumFacing.NORTH);
+        final boolean South = this.canConnect(worldIn, pos, EnumFacing.SOUTH);
+        final boolean West = this.canConnect(worldIn, pos, EnumFacing.WEST);
+        final boolean East = this.canConnect(worldIn, pos, EnumFacing.EAST);
+        final boolean Up = this.canConnect(worldIn, pos, EnumFacing.UP);
+        final boolean Down = this.canConnect(worldIn, pos, EnumFacing.DOWN);
+
+        float min = 0.31f;
+        float max = 0.69f;
+
+        float x1 = min;
+        float x2 = max;
+        float y1 = min;
+        float y2 = max;
+        float z1 = min;
+        float z2 = max;
+
+        if (North) {
+            z1 = 0.0f;
+        }
+        if (South) {
+            z2 = 1.0f;
+        }
+        if (West) {
+            x1 = 0.0f;
+        }
+        if (East) {
+            x2 = 1.0f;
+        }
+        if(Down){
+            y1 = 0.0f;
+        }
+        if(Up){
+            y2 = 1.0f;
+        }
+
+        return new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
     }
 
     @Override

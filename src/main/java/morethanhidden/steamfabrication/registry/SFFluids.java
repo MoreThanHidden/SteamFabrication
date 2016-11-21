@@ -6,12 +6,17 @@ import net.minecraftforge.fluids.FluidRegistry;
 
 public class SFFluids {
 
-    public static Fluid steam = new Fluid("steam", new ResourceLocation("steamfabrication:fluidsteam_still"), new ResourceLocation("steamfabrication:fluidsteam_flowing"));
+    public static Fluid steam = new Fluid("steam", new ResourceLocation("steamfabrication:steam_still"), new ResourceLocation("steamfabrication:steam_flow")).setDensity(-1000).setGaseous(true);
 
     public static void init() {
 
-        FluidRegistry.registerFluid(steam);
-        FluidRegistry.addBucketForFluid(steam);
+        //Enable Buckets
+        FluidRegistry.enableUniversalBucket();
+
+        //Check if Steam is Already Registered
+        if(!FluidRegistry.registerFluid(steam)) {
+            steam = FluidRegistry.getFluid("steam");
+        }
 
     }
 

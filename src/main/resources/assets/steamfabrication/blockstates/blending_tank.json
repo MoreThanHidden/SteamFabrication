@@ -2,7 +2,7 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "all": "steamfabrication:blocks/blending_tank"
+            "all": "steamfabrication:blocks/chamber_side"
         },
         "model": "cube_all",
         "uvlock": true
@@ -11,14 +11,14 @@
     "normal": [{}],
     "inventory": [{
       "submodel": {
-        "submodel1": {"model": "steamfabrication:liquid_model", "x": 90, "y": -90},
-        "submodel2": {"model": "steamfabrication:liquid_model", "x": 90, "y": 90}
+        "submodel1": { "textures": {"all": "minecraft:blocks/lava_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": -90},
+        "submodel2": { "textures": {"all": "minecraft:blocks/water_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": 90}
       }}],
     "active": {
       "true": {
 		"submodel": {
-			"submodel1": {"model": "steamfabrication:liquid_model", "x": 90, "y": -90},
-			"submodel2": {"model": "steamfabrication:liquid_model", "x": 90, "y": 90}
+			"submodel1": {"textures": {"all": "minecraft:blocks/lava_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": -90},
+			"submodel2": {"textures": {"all": "minecraft:blocks/water_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": 90}
 		}
 	  },
       "false":{}

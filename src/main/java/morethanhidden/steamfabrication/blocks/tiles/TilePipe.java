@@ -22,6 +22,10 @@ public class TilePipe extends TileEntity implements IFluidHandler, ITickable {
 
 
     @Override
+    public void update() {
+    }
+
+    @Override
     public IFluidTankProperties[] getTankProperties() {
         return new IFluidTankProperties[0];
     }
@@ -41,10 +45,5 @@ public class TilePipe extends TileEntity implements IFluidHandler, ITickable {
     @Override
     public FluidStack drain(int maxDrain, boolean doDrain) {
         return null;
-    }
-
-    @Override
-    public void update() {
-
     }
 }
