@@ -2,7 +2,6 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "all": "steamfabrication:blocks/fluid_pipe",
       "particle": "steamfabrication:blocks/fluid_pipe"
     },
     "model": "steamfabrication:fluid_pipe"
@@ -10,33 +9,107 @@
   "variants": {
     "normal": [{}],
     "inventory": [{
+      "textures": {
+        "up": "steamfabrication:blocks/fluid_pipe_blocked",
+        "down": "steamfabrication:blocks/fluid_pipe_blocked",
+        "east": "steamfabrication:blocks/fluid_pipe_blocked",
+        "west": "steamfabrication:blocks/fluid_pipe_blocked"
+      },
       "submodel": {
-        "submodel1": {"model": "steamfabrication:fluid_pipeext", "x": 90, "y": -90},
-        "submodel2": {"model": "steamfabrication:fluid_pipeext", "x": 90, "y": 90}
-      }}],
+        "north":{ "model":  "steamfabrication:fluid_pipeext", "x": -90},
+        "south":{ "model": "steamfabrication:fluid_pipeext", "x": 90}
+      },
+      "transform": "forge:default-block"
+    }],
     "down": {
-      "true": {"submodel": "steamfabrication:fluid_pipeext"},
-      "false":{}
+      "true": {
+        "textures": {
+          "east": "steamfabrication:blocks/fluid_pipe_blocked",
+          "west": "steamfabrication:blocks/fluid_pipe_blocked",
+          "south": "steamfabrication:blocks/fluid_pipe_blocked",
+          "north": "steamfabrication:blocks/fluid_pipe_blocked"
+        },
+        "submodel": {
+          "down":{ "model": "steamfabrication:fluid_pipeext"}
+        }
+      },
+      "false":{
+      }
     },
     "east": {
-      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": 90, "y": -90},
-      "false":{}
+      "true": {
+        "textures": {
+          "up": "steamfabrication:blocks/fluid_pipe_blocked",
+          "down": "steamfabrication:blocks/fluid_pipe_blocked",
+          "south": "steamfabrication:blocks/fluid_pipe_blocked",
+          "north": "steamfabrication:blocks/fluid_pipe_blocked"
+        },
+        "submodel": {
+          "east":{ "model": "steamfabrication:fluid_pipeext", "x": 90, "y": -90}
+        }
+      },
+      "false":{
+      }
     },
     "north": {
-      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": -90},
-      "false":{}
+      "true": {
+        "textures": {
+          "east": "steamfabrication:blocks/fluid_pipe_blocked",
+          "west": "steamfabrication:blocks/fluid_pipe_blocked",
+          "up": "steamfabrication:blocks/fluid_pipe_blocked",
+          "down": "steamfabrication:blocks/fluid_pipe_blocked"
+        },
+        "submodel": {
+          "north":{ "model":  "steamfabrication:fluid_pipeext", "x": -90}
+        }
+      },
+      "false":{
+      }
     },
     "south": {
-      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": 90},
-      "false":{}
+      "true": {
+        "textures": {
+          "east": "steamfabrication:blocks/fluid_pipe_blocked",
+          "west": "steamfabrication:blocks/fluid_pipe_blocked",
+          "up": "steamfabrication:blocks/fluid_pipe_blocked",
+          "down": "steamfabrication:blocks/fluid_pipe_blocked"
+        },
+        "submodel": {
+          "south":{ "model": "steamfabrication:fluid_pipeext", "x": 90}
+        }
+      },
+      "false":{
+      }
     },
     "up": {
-      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": 180},
-      "false":{}
+      "true": {
+        "textures": {
+          "east": "steamfabrication:blocks/fluid_pipe_blocked",
+          "west": "steamfabrication:blocks/fluid_pipe_blocked",
+          "south": "steamfabrication:blocks/fluid_pipe_blocked",
+          "north": "steamfabrication:blocks/fluid_pipe_blocked"
+        },
+        "submodel": {
+          "up":{ "model": "steamfabrication:fluid_pipeext", "x": 180}
+        }
+      },
+      "false":{
+      }
     },
     "west": {
-      "true": {"submodel": "steamfabrication:fluid_pipeext", "x": 90, "y": 90},
-      "false":{}
+      "true": {
+        "textures": {
+          "up": "steamfabrication:blocks/fluid_pipe_blocked",
+          "down": "steamfabrication:blocks/fluid_pipe_blocked",
+          "south": "steamfabrication:blocks/fluid_pipe_blocked",
+          "north": "steamfabrication:blocks/fluid_pipe_blocked"
+        },
+        "submodel": {
+          "west":{ "model": "steamfabrication:fluid_pipeext", "x": 90, "y": 90}
+        }
+      },
+      "false":{
+      }
     }
   }
 }

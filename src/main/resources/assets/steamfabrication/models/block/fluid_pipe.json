@@ -1,18 +1,23 @@
 {
     "textures": {
-        "all": "steamfabrication:blocks/fluid_pipe"
+        "north": "steamfabrication:blocks/fluid_pipe",
+        "south": "steamfabrication:blocks/fluid_pipe",
+        "east": "steamfabrication:blocks/fluid_pipe",
+        "west": "steamfabrication:blocks/fluid_pipe",
+        "up": "steamfabrication:blocks/fluid_pipe",
+        "down": "steamfabrication:blocks/fluid_pipe"
     },
     "elements": [
         {
             "from": [ 5.0, 5.0, 5.0 ], 
             "to": [ 11.0, 11.0, 11.0 ], 
             "faces": {
-                "north": { "texture": "#all", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
-                "east": { "texture": "#all", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
-                "south": { "texture": "#all", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
-                "west": { "texture": "#all", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
-                "up": { "texture": "#all", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
-                "down": { "texture": "#all", "uv": [ 5.0, 5.0, 11.0, 11.0 ] }
+                "north": { "texture": "#north", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
+                "east": { "texture": "#east", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
+                "south": { "texture": "#south", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
+                "west": { "texture": "#west", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
+                "up": { "texture": "#up", "uv": [ 5.0, 5.0, 11.0, 11.0 ] },
+                "down": { "texture": "#down", "uv": [ 5.0, 5.0, 11.0, 11.0 ] }
             }
         }
     ]
