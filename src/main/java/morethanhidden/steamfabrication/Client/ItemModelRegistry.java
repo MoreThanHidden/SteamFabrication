@@ -11,7 +11,7 @@ public class ItemModelRegistry {
     public static void init() {
         //Blocks
         ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockBlendingTank), 0);
-        ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockChamber), 0);
+        ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockFluidChamber), 0);
         ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockPipe), 0);
         ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockSteam), 0);
 

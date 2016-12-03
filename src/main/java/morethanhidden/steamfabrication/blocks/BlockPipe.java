@@ -82,7 +82,7 @@ public class BlockPipe extends BlockContainer {
         //Connect to other pipes
         if(world.getBlockState(pos.offset(dir)).getBlock() == this){
             return true;
-        }
+    }
 
         //Connect to Fluid Capabilitys
         TileEntity tile = world.getTileEntity(pos.offset(dir));

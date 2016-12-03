@@ -1,7 +1,7 @@
 package morethanhidden.steamfabrication.blocks;
 
 import morethanhidden.steamfabrication.SteamFabrication;
-import morethanhidden.steamfabrication.blocks.tiles.TilePipe;
+import morethanhidden.steamfabrication.blocks.tiles.TileBlendingTank;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -26,13 +26,13 @@ public class BlockBlendingTank extends BlockContainer{
 		setCreativeTab(SteamFabrication.tabsteamfabrication);
         setUnlocalizedName("blending_tank");
 		setRegistryName(new ResourceLocation(SteamFabrication.MODID, getUnlocalizedName().substring(5)));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(ACTIVE, false));
 	}
 
 	@Override
 	public BlockRenderLayer getBlockLayer() {
 		return  BlockRenderLayer.TRANSLUCENT;
 	}
-
 
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
@@ -64,11 +64,12 @@ public class BlockBlendingTank extends BlockContainer{
 	@Override
 	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 	{
-		return state.withProperty(ACTIVE, isActive());
+		return state.withProperty(ACTIVE, isActive(worldIn, pos));
 	}
 
-	public final boolean isActive()	{
-		return true;
+	public final boolean isActive(IBlockAccess world, BlockPos pos)	{
+		TileBlendingTank tile = (TileBlendingTank)world.getTileEntity(pos);
+		return tile.isActive();
 	}
 
 	@Override
@@ -79,7 +80,7 @@ public class BlockBlendingTank extends BlockContainer{
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TilePipe();
+		return new TileBlendingTank();
 	}
 
 }
