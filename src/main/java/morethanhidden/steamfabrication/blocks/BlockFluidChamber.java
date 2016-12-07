@@ -39,7 +39,7 @@ public class BlockFluidChamber extends BlockContainer{
 			playerIn.setHeldItem(hand, res.getResult());
 		}
 
-		return !playerIn.getHeldItem(hand).func_190926_b() && !(playerIn.getHeldItem(hand).getItem() instanceof ItemBlock);
+		return !playerIn.getHeldItem(hand).isEmpty() && !(playerIn.getHeldItem(hand).getItem() instanceof ItemBlock);
 	}
 
 	@Override
