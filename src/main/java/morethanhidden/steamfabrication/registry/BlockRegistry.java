@@ -14,7 +14,7 @@ public class BlockRegistry {
     public static Block blockFluidChamber = new BlockFluidChamber();
     public static Block blockBlendingTank = new BlockBlendingTank();
     public static Block blockPipe = new BlockPipe();
-    public static Block blockCopperOre = new BlockBase("copper_ore");
+    public static Block blockCopperOre = new BlockBase("ore_copper");
     public static Block blockSteam = new BlockSteam(SFFluids.steam);
 
     public static void init() {
