@@ -28,9 +28,16 @@ minecraft {
     mappings = "${config.mappings}"
 }
 
+repositories {
+		ivy {
+			name 'mthcore'
+			artifactPattern "http://morethanhidden.16mb.com/mods/[module]-[revision]-sources.[ext]"
+		}
+}
+
+
 dependencies {
-
-
+	compile name: 'mthcore', version: "${config.mc_version}-${config.mthcore_version}", ext: 'jar'
 }
 
 processResources
