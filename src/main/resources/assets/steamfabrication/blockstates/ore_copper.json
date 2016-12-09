@@ -3,6 +3,7 @@
   "defaults": {
     "textures": {
       "all": "blocks/stone",
+      "particle": "blocks/stone",
       "overlay": "steamfabrication:blocks/oreoverlay"
     },
     "model": "steamfabrication:overlay_block",
