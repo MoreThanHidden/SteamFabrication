@@ -1,6 +1,6 @@
 package morethanhidden.steamfabrication.blocks.tiles;
 
-import morethanhidden.steamfabrication.api.ISFFluidTile;
+import morethanhidden.MTHCore.api.IFluidTile;
 import morethanhidden.steamfabrication.blocks.BlockBlendingTank;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -13,7 +13,7 @@ import net.minecraftforge.fluids.capability.TileFluidHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileBlendingTank extends TileFluidHandler implements ITickable, ISFFluidTile {
+public class TileBlendingTank extends TileFluidHandler implements ITickable, IFluidTile {
 
     boolean active = false;
     int count = 0;

@@ -37,7 +37,7 @@ repositories {
 
 
 dependencies {
-	compile name: 'mthcore', version: "${config.mc_version}-${config.mthcore_version}", ext: 'jar'
+	deobfCompile name: 'mthcore', version: "${config.mc_version}-${config.mthcore_version}", ext: 'jar'
 }
 
 processResources

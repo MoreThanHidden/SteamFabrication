@@ -1,7 +1,7 @@
 package morethanhidden.steamfabrication.blocks.tiles;
 
-import morethanhidden.steamfabrication.network.FluidPacket;
-import morethanhidden.steamfabrication.network.SFNetworkWrap;
+import morethanhidden.MTHCore.network.FluidMessage;
+import morethanhidden.MTHCore.network.NetworkWrap;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -48,7 +48,7 @@ public class SFFluidTank extends FluidTank {
         if (amount != 0) {
             World world = parent.getWorld();
             if (!world.isRemote && world instanceof WorldServer) {
-                SFNetworkWrap.sendToClients((WorldServer) world, parent.getPos(), new FluidPacket(parent.getPos(), this.getFluid()));
+                NetworkWrap.sendToClients((WorldServer) world, parent.getPos(), new FluidMessage(parent.getPos(), this.getFluid()));
             }
         }
     }

@@ -1,8 +1,8 @@
 package morethanhidden.steamfabrication.Client;
 
 import morethanhidden.steamfabrication.registry.BlockRegistry;
-import morethanhidden.steamfabrication.util.BlockModelResolver;
-import morethanhidden.steamfabrication.util.ModelHelper;
+import morethanhidden.MTHCore.util.BlockModelResolver;
+import morethanhidden.MTHCore.util.ModelHelper;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 

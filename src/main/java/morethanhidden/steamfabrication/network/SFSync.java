@@ -1,21 +1,17 @@
 package morethanhidden.steamfabrication.network;
 
-
-import net.minecraft.entity.player.EntityPlayerMP;
+import morethanhidden.MTHCore.network.NetworkWrap;
+import morethanhidden.MTHCore.network.FluidMessage;
 
 public class SFSync {
 
-    static SFNetworkWrap networkWrapper;
+    static NetworkWrap networkWrapper;
     static SFSync INSTANCE;
 
     public static void init() {
-        networkWrapper = new SFNetworkWrap("steamfabrication");
-        networkWrapper.registerPacketClient(FluidPacket.class);
+        networkWrapper = new NetworkWrap("steamfabrication");
+        networkWrapper.registerPacketClient(FluidMessage.class);
         INSTANCE = new SFSync();
-    }
-
-    public static void sendTo(FluidPacket packet, EntityPlayerMP player) {
-        networkWrapper.network.sendTo(packet, player);
     }
 
 }

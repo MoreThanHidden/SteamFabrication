@@ -1,13 +1,13 @@
 package morethanhidden.steamfabrication.blocks.tiles;
 
-import morethanhidden.steamfabrication.api.ISFFluidTile;
+import morethanhidden.MTHCore.api.IFluidTile;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.TileFluidHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileFluidChamber extends TileFluidHandler implements ISFFluidTile {
+public class TileFluidChamber extends TileFluidHandler implements IFluidTile {
 
     public TileFluidChamber() {
         this.tank = new SFFluidTank(1000, this);
