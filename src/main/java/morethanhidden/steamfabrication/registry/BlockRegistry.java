@@ -17,7 +17,7 @@ public class BlockRegistry {
     public static Block blockBlendingTank = new BlockBlendingTank();
     public static Block blockPipe = new BlockPipe();
     public static Block blockCopperOre = new BlockBase(SteamFabrication.MODID, "ore_copper");
-    public static Block blockSteam = new BlockSteam(SFFluids.steam);
+    public static Block blockSteam = new BlockSteam(SFFluidRegistry.steam);
 
     public static void init() {
         GameRegistry.registerTileEntity(TileFluidChamber.class, "fluid_chamber");
@@ -29,7 +29,8 @@ public class BlockRegistry {
         registerBlock(blockBlendingTank);
         registerBlock(blockSteam);
         registerBlock(blockCopperOre);
-        FluidRegistry.addBucketForFluid(SFFluids.steam);
+
+        FluidRegistry.addBucketForFluid(SFFluidRegistry.steam);
     }
 
     private static void registerBlock(Block block) {

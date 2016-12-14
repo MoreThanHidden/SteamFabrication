@@ -13,7 +13,7 @@ public class ItemModelRegistry {
         ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockBlendingTank), 0);
         ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockFluidChamber), 0);
         ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockPipe), 0);
-        ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockSteam), 0);
+        ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockCopperOre), 0);
 
         MinecraftForge.EVENT_BUS.register(new BlockModelResolver());
     }

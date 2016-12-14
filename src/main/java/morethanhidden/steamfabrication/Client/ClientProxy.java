@@ -14,6 +14,9 @@ public class ClientProxy extends common {
 		//Register Item Models
 		ItemModelRegistry.init();
 
+		//Register Fluid Models
+		FluidModelRegistry.init();
+
 
 	}
 	

@@ -2,10 +2,11 @@ package morethanhidden.steamfabrication;
 
 import morethanhidden.steamfabrication.network.SFSync;
 import morethanhidden.steamfabrication.registry.BlockRegistry;
-import morethanhidden.steamfabrication.registry.SFFluids;
+import morethanhidden.steamfabrication.registry.SFFluidRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -21,6 +22,10 @@ public class SteamFabrication
     public static final String MODID = "steamfabrication";
     public static final String VERSION = "0.1a";
 
+    static{
+        //Enable Buckets
+        FluidRegistry.enableUniversalBucket();
+    }
 
     @Mod.Instance(value = "steamfabrication")
     public static SteamFabrication instance;
@@ -39,7 +44,7 @@ public class SteamFabrication
     
     @EventHandler
     public void preinit(FMLPreInitializationEvent event){
-        SFFluids.init();
+        SFFluidRegistry.init();
         BlockRegistry.init();
         SFSync.init();
 
