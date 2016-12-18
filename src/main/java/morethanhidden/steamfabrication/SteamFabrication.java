@@ -2,6 +2,7 @@ package morethanhidden.steamfabrication;
 
 import morethanhidden.steamfabrication.network.SFSync;
 import morethanhidden.steamfabrication.registry.BlockRegistry;
+import morethanhidden.steamfabrication.registry.ItemRegistry;
 import morethanhidden.steamfabrication.registry.SFFluidRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -46,6 +47,7 @@ public class SteamFabrication
     public void preinit(FMLPreInitializationEvent event){
         SFFluidRegistry.init();
         BlockRegistry.init();
+        ItemRegistry.init();
         SFSync.init();
 
         proxy.registerRenderers();
