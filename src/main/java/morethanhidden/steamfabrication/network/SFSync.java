@@ -5,8 +5,8 @@ import morethanhidden.MTHCore.network.FluidMessage;
 
 public class SFSync {
 
-    static NetworkWrap networkWrapper;
-    static SFSync INSTANCE;
+    public static NetworkWrap networkWrapper;
+    public static SFSync INSTANCE;
 
     public static void init() {
         networkWrapper = new NetworkWrap("steamfabrication");

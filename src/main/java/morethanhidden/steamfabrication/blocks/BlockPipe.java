@@ -1,7 +1,9 @@
 package morethanhidden.steamfabrication.blocks;
 
 import morethanhidden.steamfabrication.SteamFabrication;
+import morethanhidden.steamfabrication.api.IWrenchable;
 import morethanhidden.steamfabrication.blocks.tiles.TilePipe;
+import morethanhidden.steamfabrication.utils.WrenchUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -9,6 +11,7 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
@@ -19,7 +22,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 
-public class BlockPipe extends BlockContainer {
+public class BlockPipe extends BlockContainer implements IWrenchable {
 
     public static final PropertyBool UP = PropertyBool.create("up");
     public static final PropertyBool DOWN = PropertyBool.create("down");
@@ -140,6 +143,16 @@ public class BlockPipe extends BlockContainer {
     public TileEntity createNewTileEntity(World worldIn, int meta) {
         return new TilePipe();
     }
+
+    @Override
+    public void WrenchRightClick(EntityPlayer player, BlockPos pos, IBlockState state) {
+    }
+
+    @Override
+    public void WrenchSneakRightClick(EntityPlayer player, BlockPos pos, IBlockState state) {
+        WrenchUtils.standardWrenchSneakRightClick(player, this, pos, state);
+    }
+
 }
 
 

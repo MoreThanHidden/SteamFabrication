@@ -1,7 +1,9 @@
 package morethanhidden.steamfabrication.blocks;
 
 import morethanhidden.steamfabrication.SteamFabrication;
+import morethanhidden.steamfabrication.api.IWrenchable;
 import morethanhidden.steamfabrication.blocks.tiles.TileFluidChamber;
+import morethanhidden.steamfabrication.utils.WrenchUtils;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -18,7 +20,7 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 
 import javax.annotation.Nullable;
 
-public class BlockFluidChamber extends BlockContainer{
+public class BlockFluidChamber extends BlockContainer implements IWrenchable{
 
 	public BlockFluidChamber() {
 		super(Material.GLASS);
@@ -64,5 +66,13 @@ public class BlockFluidChamber extends BlockContainer{
 		return new TileFluidChamber();
 	}
 
+	@Override
+	public void WrenchRightClick(EntityPlayer player, BlockPos pos, IBlockState state) {
+	}
+
+	@Override
+	public void WrenchSneakRightClick(EntityPlayer player, BlockPos pos, IBlockState state) {
+		WrenchUtils.standardWrenchSneakRightClick(player, this, pos, state);
+	}
 }
 

@@ -14,14 +14,38 @@
         "submodel1": { "textures": {"all": "minecraft:blocks/lava_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": -90},
         "submodel2": { "textures": {"all": "minecraft:blocks/water_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": 90}
       }}],
-    "active": {
-      "true": {
-		"submodel": {
-			"submodel1": {"textures": {"all": "minecraft:blocks/lava_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": -90},
-			"submodel2": {"textures": {"all": "minecraft:blocks/water_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": 90}
-		}
-	  },
-      "false":{}
+      "active": {
+       "false":{}
+      },
+      "facing":{
+        "north":{},
+        "south":{},
+        "east":{},
+        "west":{}
+      },
+      "active=true,facing=north":[{
+        "submodel": {
+          "submodel1": {"textures": {"all": "minecraft:blocks/lava_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": -180},
+          "submodel2": {"textures": {"all": "minecraft:blocks/water_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": 0}
+        }
+      }],
+      "active=true,facing=south":[{
+        "submodel": {
+          "submodel1": {"textures": {"all": "minecraft:blocks/lava_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": 0},
+          "submodel2": {"textures": {"all": "minecraft:blocks/water_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": -180}
+        }
+      }],
+      "active=true,facing=east":[{
+        "submodel": {
+          "submodel1": {"textures": {"all": "minecraft:blocks/lava_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": -90},
+          "submodel2": {"textures": {"all": "minecraft:blocks/water_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": 90}
+        }
+      }],
+      "active=true,facing=west":[{
+        "submodel": {
+          "submodel1": {"textures": {"all": "minecraft:blocks/lava_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": 90},
+          "submodel2": {"textures": {"all": "minecraft:blocks/water_flow"},"model": "steamfabrication:liquid_model", "x": 0, "y": -90}
+        }
+      }]
     }
-	}
 }
