@@ -94,13 +94,13 @@ public class BlockBlendingTank extends BlockContainer implements IWrenchable, IR
 	}
 
 	@Override
-	public void WrenchRightClick(EntityPlayer player, BlockPos pos, IBlockState state) {
-		WrenchUtils.standardWrenchRightClick(player, this, pos, state);
+	public void WrenchRightClick(EntityPlayer player, World worldIn, BlockPos pos, IBlockState state) {
+		WrenchUtils.standardWrenchRightClick(worldIn, this, pos, state);
 	}
 
 	@Override
-	public void WrenchSneakRightClick(EntityPlayer player, BlockPos pos, IBlockState state) {
-		WrenchUtils.standardWrenchSneakRightClick(player, this, pos, state);
+	public void WrenchSneakRightClick(EntityPlayer player, World worldIn, BlockPos pos, IBlockState state) {
+		WrenchUtils.standardWrenchSneakRightClick(worldIn, this, pos, state);
 	}
 
 	@Override

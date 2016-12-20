@@ -67,12 +67,12 @@ public class BlockFluidChamber extends BlockContainer implements IWrenchable{
 	}
 
 	@Override
-	public void WrenchRightClick(EntityPlayer player, BlockPos pos, IBlockState state) {
+	public void WrenchRightClick(EntityPlayer player, World worldIn, BlockPos pos, IBlockState state) {
 	}
 
 	@Override
-	public void WrenchSneakRightClick(EntityPlayer player, BlockPos pos, IBlockState state) {
-		WrenchUtils.standardWrenchSneakRightClick(player, this, pos, state);
+	public void WrenchSneakRightClick(EntityPlayer player, World worldIn, BlockPos pos, IBlockState state) {
+		WrenchUtils.standardWrenchSneakRightClick(worldIn, this, pos, state);
 	}
 }
 
