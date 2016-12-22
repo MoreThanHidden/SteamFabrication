@@ -2,19 +2,24 @@
     "forge_marker": 1,
     "defaults": {
         "textures": {
-            "all": "steamfabrication:blocks/engine"
+            "all": "steamfabrication:blocks/generatorside_rf"
         },
         "model": "cube_all",
         "uvlock": true
     },
     "variants": {
-        "normal": [
-            {
+        "normal": [{}],
+        "inventory": [{}],
+        "rf": [{
+            "textures": {
+                "all": "steamfabrication:blocks/generatorside_rf"
             }
-        ],
-        "inventory": [
-            {
+        }],
+        "eu": [{
+            "textures": {
+                "all": "steamfabrication:blocks/generatorside_eu"
             }
-        ]
+        }]
+
     }
 }

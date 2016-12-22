@@ -11,12 +11,12 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.Set;
+import java.util.HashSet;
 
 public class wrench extends ItemTool{
 
-    public wrench(Set<Block> blocks) {
-        super(ToolMaterial.IRON, blocks);
+    public wrench() {
+        super(ToolMaterial.IRON, new HashSet<Block>());
         setUnlocalizedName("wrench");
         setRegistryName(SteamFabrication.MODID, "wrench");
     }

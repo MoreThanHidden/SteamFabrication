@@ -15,6 +15,7 @@ public class ItemModelRegistry {
         ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockFluidChamber), 0);
         ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockPipe), 0);
         ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockCopperOre), 0);
+        ModelHelper.registerItemModel(Item.getItemFromBlock(BlockRegistry.blockEngine), 0);
 
         ModelHelper.registerItemModel(ItemRegistry.Wrench, 0);
 
